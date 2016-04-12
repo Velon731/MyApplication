@@ -38,28 +38,26 @@
         android:hint="Second number"
         />
 
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ins_second_number"
-        android:layout_alignParentRight="true"
-
-        />
-
     <Button
         android:id="@+id/plus"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ins_second_number"
-
+        android:layout_below="@id/ins_second_number"/>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/plus"
+        android:layout_alignParentRight="true"
         />
+
     <Button
         android:id="@+id/minus"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/ins_second_number"
         android:layout_toRightOf="@id/plus"
+
          />
     <Button
         android:id="@+id/divide"

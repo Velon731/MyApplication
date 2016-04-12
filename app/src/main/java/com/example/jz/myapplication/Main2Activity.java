@@ -1,11 +1,13 @@
 package com.example.jz.myapplication;
 
+import android.renderscript.Sampler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -38,9 +40,14 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 String S1 = String.valueOf(first_number.getText());
                 String S2 = String.valueOf(second_number.getText());
-                int result = Integer.parseInt(S1)+Integer.parseInt(S2);
-                vysledek.setText(String.valueOf(result));
-                ;
+                if (S1.isEmpty()||S2.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Empty field",Toast.LENGTH_LONG);
+
+                } else {
+                    int result = Integer.parseInt(S1)+Integer.parseInt(S2);
+                    vysledek.setText(String.valueOf(result));
+                }
+
             }
         });
         odecitani.setOnClickListener(new View.OnClickListener() {
@@ -48,27 +55,46 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View view) {
                 String S1 = String.valueOf(first_number.getText());
                 String S2 = String.valueOf(second_number.getText());
-                int result = Integer.parseInt(S1)-Integer.parseInt(S2);
-                vysledek.setText(String.valueOf(result));
-                ;
+                if (S1.isEmpty()||S2.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Empty field",Toast.LENGTH_LONG);
+
+                } else {
+                    int result = Integer.parseInt(S1)-Integer.parseInt(S2);
+                    vysledek.setText(String.valueOf(result));
+                }
             }
-        });nasobeni.setOnClickListener(new View.OnClickListener() {
+        });
+        nasobeni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String S1 = String.valueOf(first_number.getText());
                 String S2 = String.valueOf(second_number.getText());
-                int result = Integer.parseInt(S1)*Integer.parseInt(S2);
-                vysledek.setText(String.valueOf(result));
-                ;
+                if (S1.isEmpty()||S2.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Empty field",Toast.LENGTH_LONG);
+
+                } else {
+                    int result = Integer.parseInt(S1)*Integer.parseInt(S2);
+                    vysledek.setText(String.valueOf(result));
+                }
             }
-        });deleni.setOnClickListener(new View.OnClickListener() {
+        });
+        deleni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String S1 = String.valueOf(first_number.getText());
                 String S2 = String.valueOf(second_number.getText());
-                int result = Integer.parseInt(S1)/Integer.parseInt(S2);
-                vysledek.setText(String.valueOf(result));
-                ;
+                if (S1.isEmpty()||S2.isEmpty()) {
+                    Toast.makeText(getApplicationContext(),"Empty field",Toast.LENGTH_LONG);
+
+                } else {
+                    if (S2.contains("0")){
+                        Toast.makeText(getApplicationContext(),"Can not divide by zero.",Toast.LENGTH_LONG);
+                    } else {
+                        int result = Integer.parseInt(S1)/Integer.parseInt(S2);
+                        vysledek.setText(String.valueOf(result));
+                    }
+                }
+
             }
         });
     }
